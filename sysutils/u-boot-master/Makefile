@@ -17,6 +17,7 @@ WWW?=		https://www.denx.de/wiki/U-Boot
 LICENSE=	GPLv2
 
 BUILD_DEPENDS+=	gsed:textproc/gsed \
+		gdate:sysutils/coreutils \
 		swig:devel/swig \
 		dtc>=1.4.1:sysutils/dtc \
 		mkimage:sysutils/u-boot-tools \
