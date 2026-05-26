@@ -17,7 +17,8 @@ BROKEN_i386=    doesn't buld on pkg builder
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/git:devel/git \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
-		${LOCALBASE}/bin/swig:devel/swig
+		${LOCALBASE}/bin/swig:devel/swig	\
+		gtar:archivers/gtar
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -83,7 +84,8 @@ CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DKICAD_USE_EGL=ON \
 		-DKICAD_USE_BUNDLED_GLEW=ON \
 		-DNANODBC_ENABLE_BOOST=ON \
-		-DOCC_INCLUDE_DIR=${LOCALBASE}/include/OpenCASCADE
+		-DOCC_INCLUDE_DIR=${LOCALBASE}/include/OpenCASCADE	\
+		-DTAR:FILEPATH=${LOCALBASE}/bin/gtar
 USE_LDCONFIG=	yes
 
 .include "Makefile.git_rev"
